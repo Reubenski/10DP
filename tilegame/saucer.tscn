@@ -21,7 +21,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_tqfpr"]
 radius = 32.0
 
-[node name="Saucer" type="Area2D"]
+[node name="Saucer" type="Area2D" groups=["aliens"]]
 script = ExtResource("1_drrb8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

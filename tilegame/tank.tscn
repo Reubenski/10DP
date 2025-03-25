@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bujdsgmh6a7ku"]
+[gd_scene load_steps=7 format=3 uid="uid://bujdsgmh6a7ku"]
 
 [ext_resource type="Script" uid="uid://c3qswqrxqgupe" path="res://tank.gd" id="1_1ealj"]
 [ext_resource type="Texture2D" uid="uid://cun8sr31buq06" path="res://art/tank.png" id="1_6lwfj"]
+[ext_resource type="PackedScene" uid="uid://dfk3ky41arjko" path="res://projectile.tscn" id="2_a62es"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ealj"]
 atlas = ExtResource("1_6lwfj")
@@ -23,6 +24,7 @@ radius = 32.0
 
 [node name="Tank" type="Area2D"]
 script = ExtResource("1_1ealj")
+projectile = ExtResource("2_a62es")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -30,3 +32,6 @@ sprite_frames = SubResource("SpriteFrames_a62es")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_yfqcd")
+
+[node name="Barrel" type="Marker2D" parent="."]
+position = Vector2(0, -32)
