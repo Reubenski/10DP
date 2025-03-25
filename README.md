@@ -1,4 +1,4 @@
-# 4x chess
+# Roguelite
 ## Framework
 100x100 tile map
 chess like movement (moves diagonally, L-shape knight movement)
