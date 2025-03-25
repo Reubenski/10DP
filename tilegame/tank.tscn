@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://bujdsgmh6a7ku"]
+
+[ext_resource type="Script" uid="uid://c3qswqrxqgupe" path="res://tank.gd" id="1_1ealj"]
+[ext_resource type="Texture2D" uid="uid://cun8sr31buq06" path="res://art/tank.png" id="1_6lwfj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ealj"]
+atlas = ExtResource("1_6lwfj")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a62es"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ealj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yfqcd"]
+radius = 32.0
+
+[node name="Tank" type="Area2D"]
+script = ExtResource("1_1ealj")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_a62es")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_yfqcd")
