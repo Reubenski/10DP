@@ -222,11 +222,10 @@ texture_region_size = Vector2i(8, 8)
 21:12/0 = 0
 0:7/size_in_atlas = Vector2i(4, 4)
 0:7/0 = 0
+0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [resource]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 4
 physics_layer_0/collision_mask = 4
-custom_data_layer_0/name = "Interactive"
-custom_data_layer_0/type = 0
 sources/0 = SubResource("TileSetAtlasSource_1koi3")
