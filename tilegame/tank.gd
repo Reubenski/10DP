@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var top_speed = 400
-@export var acceleration = 4
+@export var acceleration = 300
 @export var reload_time = 0.1
 @export var projectile : PackedScene
 var velocity = Vector2.ZERO
@@ -24,12 +24,12 @@ func _process(delta):
 	if reload_counter > 0:
 		reload_counter -= delta
 	if Input.is_action_pressed("right"):
-		velocity.x += acceleration
+		velocity.x += acceleration * delta
 	elif velocity.x > 0:
-		velocity.x -= acceleration
+		velocity.x -= acceleration * delta
 	if Input.is_action_pressed("left"):
-		velocity.x -= acceleration
+		velocity.x -= acceleration * delta
 	elif velocity.x < 0:
-		velocity.x += acceleration
+		velocity.x += acceleration * delta
 	position += velocity * delta
 	position = position.clamp(Vector2.ZERO, screen_size)

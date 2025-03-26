@@ -22,7 +22,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_yfqcd"]
 radius = 32.0
 
-[node name="Tank" type="Area2D"]
+[node name="Tank" type="Area2D" groups=["player"]]
 script = ExtResource("1_1ealj")
 projectile = ExtResource("2_a62es")
 metadata/_edit_group_ = true

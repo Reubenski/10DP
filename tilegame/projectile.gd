@@ -7,8 +7,6 @@ func _process(delta):
 	if position.y < 0:
 		queue_free()
 
-
-
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("aliens"):
 		area.queue_free()

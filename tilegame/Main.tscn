@@ -1,14 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://jbi1tafwf51h"]
+[gd_scene load_steps=5 format=3 uid="uid://jbi1tafwf51h"]
 
+[ext_resource type="Script" uid="uid://6joqbt052qst" path="res://main.gd" id="1_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://bujdsgmh6a7ku" path="res://tank.tscn" id="1_glv2v"]
-[ext_resource type="PackedScene" path="res://saucer.tscn" id="2_uu6xs"]
+[ext_resource type="PackedScene" uid="uid://bifw88cschmv3" path="res://saucer.tscn" id="2_uu6xs"]
 [ext_resource type="PackedScene" uid="uid://ccuxqnyx4ibva" path="res://map.tscn" id="3_r0du0"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_cm0pq")
+saucer = ExtResource("2_uu6xs")
 
 [node name="Node2D" parent="." instance=ExtResource("3_r0du0")]
 
 [node name="Tank" parent="." instance=ExtResource("1_glv2v")]
 
-[node name="Saucer" parent="." instance=ExtResource("2_uu6xs")]
-position = Vector2(30, 32)
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(100, -32)

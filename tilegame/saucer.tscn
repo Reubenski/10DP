@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bifw88cschmv3"]
+[gd_scene load_steps=7 format=3 uid="uid://bifw88cschmv3"]
 
 [ext_resource type="Script" uid="uid://dmd3cgmhelao2" path="res://saucer.gd" id="1_drrb8"]
+[ext_resource type="PackedScene" uid="uid://be3xgwy6ke1wf" path="res://bomb.tscn" id="2_tmru0"]
 [ext_resource type="Texture2D" uid="uid://cvkjn3i3kawa" path="res://art/saucer.png" id="2_ufafv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tmru0"]
@@ -23,9 +24,13 @@ radius = 32.0
 
 [node name="Saucer" type="Area2D" groups=["aliens"]]
 script = ExtResource("1_drrb8")
+bomb = ExtResource("2_tmru0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_468w2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_tqfpr")
+
+[node name="BombDoors" type="Marker2D" parent="."]
+position = Vector2(0, 32)
