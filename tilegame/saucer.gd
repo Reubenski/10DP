@@ -3,7 +3,7 @@ extends Area2D
 @export var bomb : PackedScene
 @export var bomb_time = 2
 var bomb_counter = 0
-@export var speed = 400
+@export var speed = 200
 @export var drop_distance = 128
 @export var margins = 100
 var target_y = drop_distance

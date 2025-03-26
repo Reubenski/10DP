@@ -2,7 +2,7 @@ extends Area2D
 
 @export var top_speed = 400
 @export var acceleration = 300
-@export var reload_time = 0.1
+@export var reload_time = 1
 @export var projectile : PackedScene
 var velocity = Vector2.ZERO
 var screen_size

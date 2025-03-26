@@ -1,9 +1,9 @@
 extends Node
 
 @export var saucer : PackedScene
-var waves = [2,3,0.3,0.3,0.3,2]
+var waves = [3,3,0.3,5,0.3,0.3,4,0.3]
 var current_wave = 0
-var spawn_counter = 0
+var spawn_counter = 4
 
 func _process(delta):
 	if spawn_counter <= 0:
