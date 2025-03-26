@@ -6,6 +6,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(398.5, 400)
 scale = Vector2(6.19531, 6.20313)
 texture = ExtResource("1_wijl4")
