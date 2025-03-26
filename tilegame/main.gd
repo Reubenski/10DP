@@ -1,7 +1,8 @@
 extends Node
 
 @export var saucer : PackedScene
-@export var spawn_time = 2
+var waves = [2,3,0.3,0.3,0.3,2]
+var current_wave = 0
 var spawn_counter = 0
 
 func _process(delta):
@@ -9,5 +10,8 @@ func _process(delta):
 		var p = saucer.instantiate()
 		add_child(p)
 		p.transform = $SpawnPoint.transform
-		spawn_counter = spawn_time
+		spawn_counter = waves[current_wave]
+		current_wave += 1
+		if current_wave >= len(waves):
+			current_wave = 0
 	spawn_counter -= delta
