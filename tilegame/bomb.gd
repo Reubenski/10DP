@@ -15,3 +15,6 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player"):
 		area.queue_free()
 		queue_free()
+	elif area.is_in_group("building"):
+		area.queue_free()
+		queue_free()

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=4 uid="uid://ccuxqnyx4ibva"]
+[gd_scene load_steps=4 format=4 uid="uid://ccuxqnyx4ibva"]
 
 [ext_resource type="Texture2D" uid="uid://7yadaia4w5vs" path="res://art/sky.png" id="1_wijl4"]
 [ext_resource type="TileSet" uid="uid://cl42q8uqqsbvb" path="res://art/backgroundtileset.tres" id="2_e0an3"]
+[ext_resource type="Script" uid="uid://bjjstve01l2do" path="res://tile_map_layer.gd" id="3_e0an3"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -13,8 +14,8 @@ texture = ExtResource("1_wijl4")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 1
-position = Vector2(-2, 11)
-scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAAAACAAAAAAAAcAAAAEACAAAAAAAAcAAAAIACAAAAAAAAcAAAAMACAAAAAAAAcAAAAQACAAAAAAAAcAAAAUACAAAAAAAAcAAAAYACAAAAAAAAcAAAAcACAAAAAAAAcAAAAgACAAAAAAAAcAAAA=")
+scale = Vector2(2.78, 2.78)
+tile_map_data = PackedByteArray("AAAAAAgAAAAAAAcAAAABAAgAAAAAAAcAAAACAAgAAAAAAAcAAAADAAgAAAAAAAcAAAAEAAgAAAAAAAcAAAAFAAgAAAAAAAcAAAAGAAgAAAAAAAcAAAAHAAgAAAAAAAcAAAAIAAgAAAAAAAcAAAA=")
 tile_set = ExtResource("2_e0an3")
 occlusion_enabled = false
+script = ExtResource("3_e0an3")
