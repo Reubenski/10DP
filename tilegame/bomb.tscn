@@ -50,7 +50,7 @@ script = ExtResource("1_4fn8o")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 2
 sprite_frames = SubResource("SpriteFrames_bwkwj")
-frame_progress = 0.180099
+frame_progress = 0.739804
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_fy0rd")
