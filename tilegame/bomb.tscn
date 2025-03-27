@@ -1,17 +1,38 @@
-[gd_scene load_steps=6 format=3 uid="uid://be3xgwy6ke1wf"]
+[gd_scene load_steps=9 format=3 uid="uid://be3xgwy6ke1wf"]
 
 [ext_resource type="Script" uid="uid://bg28y5r7wvk5o" path="res://bomb.gd" id="1_4fn8o"]
 [ext_resource type="Texture2D" uid="uid://1b1m8cnx182g" path="res://art/bomb.png" id="2_nfxiy"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6w74q"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fn8o"]
 atlas = ExtResource("2_nfxiy")
 region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfxiy"]
+atlas = ExtResource("2_nfxiy")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6w74q"]
+atlas = ExtResource("2_nfxiy")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwkwj"]
+atlas = ExtResource("2_nfxiy")
+region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bwkwj"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_4fn8o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfxiy")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_6w74q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwkwj")
 }],
 "loop": true,
 "name": &"default",
@@ -22,11 +43,14 @@ animations = [{
 radius = 8.0
 
 [node name="Bomb" type="Area2D"]
+texture_filter = 1
 collision_mask = 5
 script = ExtResource("1_4fn8o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 2
 sprite_frames = SubResource("SpriteFrames_bwkwj")
+frame_progress = 0.180099
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_fy0rd")

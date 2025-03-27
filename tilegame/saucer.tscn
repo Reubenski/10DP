@@ -1,16 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://bifw88cschmv3"]
+[gd_scene load_steps=8 format=3 uid="uid://bifw88cschmv3"]
 
 [ext_resource type="Script" uid="uid://dmd3cgmhelao2" path="res://saucer.gd" id="1_drrb8"]
 [ext_resource type="PackedScene" uid="uid://be3xgwy6ke1wf" path="res://bomb.tscn" id="2_tmru0"]
 [ext_resource type="Texture2D" uid="uid://cvkjn3i3kawa" path="res://art/saucer.png" id="2_ufafv"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tmru0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufafv"]
 atlas = ExtResource("2_ufafv")
 region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmru0"]
+atlas = ExtResource("2_ufafv")
+region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_468w2"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufafv")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tmru0")
 }],
@@ -28,6 +35,7 @@ bomb = ExtResource("2_tmru0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_468w2")
+frame_progress = 0.291046
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_tqfpr")

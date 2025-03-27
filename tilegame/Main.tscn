@@ -12,6 +12,7 @@ saucer = ExtResource("2_uu6xs")
 [node name="map" parent="." instance=ExtResource("3_r0du0")]
 
 [node name="Tank" parent="." instance=ExtResource("1_glv2v")]
+texture_filter = 1
 
 [node name="SpawnPoint" type="Marker2D" parent="."]
 position = Vector2(100, -32)

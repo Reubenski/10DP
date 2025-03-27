@@ -13,6 +13,7 @@ var rng = RandomNumberGenerator.new()
 func _ready():
 	screen_size = get_viewport_rect().size
 	bomb_counter = bomb_time + rng.randf_range(0, bomb_time)
+	$AnimatedSprite2D.play()
 	
 func _process(delta):
 	if position.y < target_y:

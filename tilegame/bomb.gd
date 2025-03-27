@@ -9,6 +9,7 @@ var screen_size
 
 func _ready():
 	screen_size = get_viewport_rect().size
+	$AnimatedSprite2D.play()
 
 
 func gettingmap(pos):

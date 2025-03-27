@@ -1,18 +1,25 @@
-[gd_scene load_steps=7 format=3 uid="uid://bujdsgmh6a7ku"]
+[gd_scene load_steps=8 format=3 uid="uid://bujdsgmh6a7ku"]
 
 [ext_resource type="Script" uid="uid://c3qswqrxqgupe" path="res://tank.gd" id="1_1ealj"]
 [ext_resource type="Texture2D" uid="uid://cun8sr31buq06" path="res://art/tank.png" id="1_6lwfj"]
 [ext_resource type="PackedScene" uid="uid://dfk3ky41arjko" path="res://projectile.tscn" id="2_a62es"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1ealj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_a62es"]
 atlas = ExtResource("1_6lwfj")
 region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfqcd"]
+atlas = ExtResource("1_6lwfj")
+region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a62es"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1ealj")
+"texture": SubResource("AtlasTexture_a62es")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfqcd")
 }],
 "loop": true,
 "name": &"default",

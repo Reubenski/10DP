@@ -14,6 +14,7 @@ func _ready():
 	spawn.x = screen_size.x/2
 	spawn.y = screen_size.y-32
 	position = spawn
+	$AnimatedSprite2D.play()
 	
 func _process(delta):
 	if Input.is_action_pressed("fire") and reload_counter <= 0:
