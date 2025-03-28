@@ -1,6 +1,13 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cl42q8uqqsbvb"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://cl42q8uqqsbvb"]
 
+[ext_resource type="Texture2D" uid="uid://bpy245rcdei2e" path="res://newbuildingsprite.png" id="1_1koi3"]
 [ext_resource type="Texture2D" uid="uid://nmv5ba1vrcn0" path="res://art/tilemap_PLACEHOLDER.png" id="1_5sr5w"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oarwa"]
+texture = ExtResource("1_1koi3")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-14.3384, -13.7011, 16, -16, 16, 16, -16, 16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1koi3"]
 texture = ExtResource("1_5sr5w")
@@ -225,6 +232,7 @@ texture_region_size = Vector2i(8, 8)
 0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [resource]
-tile_size = Vector2i(32, 32)
+tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_1koi3")
+sources/3 = SubResource("TileSetAtlasSource_1koi3")
+sources/0 = SubResource("TileSetAtlasSource_oarwa")
