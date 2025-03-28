@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://8hm7iut7ysgn"]
+
+[ext_resource type="Script" uid="uid://fkp4t56ct3na" path="res://menus/main_menu.gd" id="1_ct8su"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tfsul"]
+font_size = 48
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ct8su")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 70.0
+offset_right = 384.0
+offset_bottom = 137.0
+text = "Earth Invader"
+label_settings = SubResource("LabelSettings_tfsul")
+horizontal_alignment = 1
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 180.0
+offset_right = 170.0
+offset_bottom = 211.0
+text = "Start Game"
+
+[node name="ExitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 220.0
+offset_right = 170.0
+offset_bottom = 251.0
+text = "Exit"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

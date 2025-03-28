@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="tileGame"
-run/main_scene="uid://jbi1tafwf51h"
+run/main_scene="uid://8hm7iut7ysgn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
