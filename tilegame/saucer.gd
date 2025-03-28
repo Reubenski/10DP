@@ -25,8 +25,12 @@ func _process(delta):
 	position.x += speed * delta
 	position = position.clamp(Vector2.ZERO, screen_size)
 	if bomb_counter <= 0:
-		var p = bomb.instantiate()
-		get_parent().add_child(p)
-		p.transform = $BombDoors.global_transform
-		bomb_counter = bomb_time + rng.randf_range(0, bomb_time)
+		drop_bomb()
 	bomb_counter -= delta
+	
+func drop_bomb():
+	var p = bomb.instantiate()
+	get_parent().add_child(p)
+	p.transform = $BombDoors.global_transform
+	bomb_counter = bomb_time + rng.randf_range(0, bomb_time)
+	
