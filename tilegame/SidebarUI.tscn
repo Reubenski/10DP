@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjpxvyhmgprxq"]
+
+[ext_resource type="Texture2D" uid="uid://thhheotrr7r1" path="res://art/menusprite1.png" id="1_nhqug"]
+[ext_resource type="Texture2D" uid="uid://cdsjgwkrr5kqw" path="res://art/menusprite2.png" id="2_uclg4"]
+[ext_resource type="Texture2D" uid="uid://ceq6emnm1x487" path="res://art/menusprite3.png" id="3_ip0j4"]
+
+[node name="SidebarUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.167
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -5.0
+offset_right = 0.599991
+offset_bottom = -5.0
+item_count = 3
+max_columns = 2
+same_column_width = true
+icon_scale = 2.0
+item_0/text = "People"
+item_0/icon = ExtResource("1_nhqug")
+item_1/text = "Bricks"
+item_1/icon = ExtResource("2_uclg4")
+item_2/text = "Metal"
+item_2/icon = ExtResource("3_ip0j4")

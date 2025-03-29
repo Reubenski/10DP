@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=4 uid="uid://ccuxqnyx4ibva"]
+[gd_scene load_steps=5 format=4 uid="uid://ccuxqnyx4ibva"]
 
 [ext_resource type="Script" uid="uid://b7efojorroqo4" path="res://map.gd" id="1_e0an3"]
 [ext_resource type="Texture2D" uid="uid://7yadaia4w5vs" path="res://art/sky.png" id="1_wijl4"]
 [ext_resource type="TileSet" uid="uid://cl42q8uqqsbvb" path="res://art/backgroundtileset.tres" id="2_e0an3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0an3"]
+size = Vector2(399.5, 403)
 
 [node name="maptiles" type="Node2D"]
 texture_filter = 1
@@ -13,6 +16,13 @@ texture_filter = 1
 position = Vector2(400, 400)
 scale = Vector2(2, 2)
 texture = ExtResource("1_wijl4")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+shape = SubResource("RectangleShape2D_e0an3")
 
 [node name="CityMap" type="TileMapLayer" parent="."]
 texture_filter = 1
