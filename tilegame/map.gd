@@ -1,7 +1,14 @@
 extends Node2D
 
+var bricks =  10
+var people =10
+var metal =10
+
 func _ready():
+	$CityMap
 	pass
+
+	
 	
 func _input(event):
 	if event is InputEventMouseButton:
