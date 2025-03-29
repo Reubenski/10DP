@@ -1,17 +1,19 @@
 extends Node
 
 @export var saucer : PackedScene
-var waves = [3,3,0.3,5,0.3,0.3,4,0.3]
-var current_wave = 0
-var spawn_counter = 4
-
+var waveNo = 0
+var wave = [];
+var waveTimer = 0
 func _process(delta):
-	if spawn_counter <= 0:
+	if get_tree().get_nodes_in_group("aliens").size() == 0 and wave.size() == 0:
+		waveNo = waveNo + 1;
+		wave = []
+		for i in range(0,waveNo):
+			wave.append(0.3)
+	if wave.size() > 0 and waveTimer > wave[0]:
 		var p = saucer.instantiate()
 		add_child(p)
 		p.transform = $SpawnPoint.transform
-		spawn_counter = waves[current_wave]
-		current_wave += 1
-		if current_wave >= len(waves):
-			current_wave = 0
-	spawn_counter -= delta
+		waveTimer = 0
+		wave.remove_at(0)
+	waveTimer += delta
