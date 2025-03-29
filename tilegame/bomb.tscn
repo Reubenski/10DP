@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://be3xgwy6ke1wf"]
+[gd_scene load_steps=10 format=3 uid="uid://be3xgwy6ke1wf"]
 
 [ext_resource type="Script" uid="uid://bg28y5r7wvk5o" path="res://bomb.gd" id="1_4fn8o"]
+[ext_resource type="PackedScene" uid="uid://vuu2f416kxce" path="res://Explosion.tscn" id="2_6w74q"]
 [ext_resource type="Texture2D" uid="uid://1b1m8cnx182g" path="res://art/bomb.png" id="2_nfxiy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4fn8o"]
@@ -46,6 +47,7 @@ radius = 8.0
 texture_filter = 1
 collision_mask = 5
 script = ExtResource("1_4fn8o")
+explosion = ExtResource("2_6w74q")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 2
@@ -55,5 +57,7 @@ frame_progress = 0.992105
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_fy0rd")
+
+[node name="ExplosionPoint" type="Marker2D" parent="."]
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
