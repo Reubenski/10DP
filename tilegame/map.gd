@@ -1,13 +1,10 @@
 extends Node2D
 
-@export var tile = Vector2i(0,0)
-
 var bricks =  10
 var people =10
 var metal =10
 
 func _ready():
-	$CityMap
 	pass
 
 	
@@ -19,6 +16,6 @@ func _input(event):
 		
 		if event.pressed:
 			var itemlist = get_node("/root/Main/SidebarUi").get_child(0)
-			
-			$CityMap.set_cell(position,0,Vector2i(itemlist.get_selected_items().get(0)*4,0))
+			if !itemlist.get_selected_items().is_empty():
+				$CityMap.set_cell(position,0,Vector2i(itemlist.get_selected_items().get(0)*4,0))
 			
