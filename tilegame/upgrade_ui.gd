@@ -48,11 +48,11 @@ var upgrades = [
 	],
 	[
 		{
-			"name":"Flight",
+			"name":"Multiple Projectiles",
 			"links":-1
 		},
 		{
-			"name":"Exploding Bullets",
+			"name":"Fast Reload",
 			"links":-1
 		},
 		{
@@ -86,3 +86,19 @@ func _on_item_list_item_selected(index: int) -> void:
 		"Tank Speed":
 			playerTank.top_speed = playerTank.top_speed + 300
 			playerTank.acceleration = playerTank.acceleration + 300
+		"Multiple Projectiles":
+			playerTank.projectile_count = 3
+		"Penetrating Missiles":
+			playerTank.penetrating_bullets = true
+		"Fully Automatic":
+			playerTank.reload_pattern = [0.1]
+		"Homing Missiles":
+			playerTank.homing_missiles = true
+		"Tank Armour":
+			playerTank.health = 3
+		"Missile Speed":
+			playerTank.missile_speed = 800
+		"Fast Reload":
+			playerTank.reload_pattern = [0.5]
+		"Missile Size":
+			playerTank.missile_size = 3

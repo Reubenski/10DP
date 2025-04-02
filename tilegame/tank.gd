@@ -2,10 +2,16 @@ extends Area2D
 
 @export var top_speed = 400
 @export var acceleration = 300
+@export var health = 1
+@export var missile_speed = 400
+@export var missile_size = 1
 @export var reload_pattern = [1]
 @export var projectile : PackedScene
+@export var projectile_count = 1
 @export var uioffset=200
 @export var square_size = 800
+@export var penetrating_bullets = false
+@export var homing_missiles = false
 var velocity = Vector2.ZERO
 var screen_size
 var screen_offset
@@ -24,9 +30,16 @@ func _ready():
 	
 func _process(delta):
 	if Input.is_action_pressed("fire") and reload_counter <= 0:
-		var p = projectile.instantiate()
-		owner.add_child(p)
-		p.transform = $Barrel.global_transform
+		for n in range(projectile_count):
+			var p = projectile.instantiate()
+			owner.add_child(p)
+			p.transform = $Barrel.global_transform
+			p.xspeed = (-(projectile_count-1)/2 + n)*100 #magic number cause I'm a hack
+			p.penetrating = penetrating_bullets
+			p.homing = homing_missiles
+			p.speed = missile_speed
+			p.scale.x = missile_size
+			p.scale.y = missile_size
 		reload_counter = reload_pattern[reload_position]
 		reload_position = reload_position + 1
 		if reload_position >= reload_pattern.size():

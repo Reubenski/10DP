@@ -31,5 +31,7 @@ func _process(delta):
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player"):
 		explode()
-		area.queue_free()
+		area.health = area.health - 1
+		if area.health <= 0:
+			area.queue_free()
 		queue_free()
