@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://8ssjgflhc08m"]
+
+[ext_resource type="Script" uid="uid://21lv4v4gsmx5" path="res://upgrade_ui.gd" id="1_1c6tr"]
+
+[node name="UpgradeUI" type="Control"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1200.0
+offset_right = -1160.0
+offset_bottom = 40.0
+grow_horizontal = 0
+script = ExtResource("1_1c6tr")
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 0
+offset_left = 1000.0
+offset_right = 1200.0
+offset_bottom = 800.0
+item_count = 2
+item_0/text = "test"
+item_1/text = "test2"
+
+[connection signal="item_selected" from="ItemList" to="." method="_on_item_list_item_selected"]

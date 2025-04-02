@@ -2,7 +2,7 @@ extends Area2D
 
 @export var top_speed = 400
 @export var acceleration = 300
-@export var reload_time = 1
+@export var reload_pattern = [1]
 @export var projectile : PackedScene
 @export var uioffset=200
 @export var square_size = 800
@@ -10,6 +10,7 @@ var velocity = Vector2.ZERO
 var screen_size
 var screen_offset
 var reload_counter = 0;
+var reload_position = 0;
 
 
 func _ready():
@@ -26,7 +27,10 @@ func _process(delta):
 		var p = projectile.instantiate()
 		owner.add_child(p)
 		p.transform = $Barrel.global_transform
-		reload_counter = reload_time
+		reload_counter = reload_pattern[reload_position]
+		reload_position = reload_position + 1
+		if reload_position >= reload_pattern.size():
+			reload_position = 0
 	if reload_counter > 0:
 		reload_counter -= delta
 	if Input.is_action_pressed("right"):
