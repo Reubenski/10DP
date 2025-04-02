@@ -8,10 +8,13 @@ texture = ExtResource("1_1koi3")
 0:0/size_in_atlas = Vector2i(4, 5)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+0:0/0/custom_data_0 = Vector3i(1, 0, 0)
 4:0/size_in_atlas = Vector2i(4, 5)
 4:0/0 = 0
+4:0/0/custom_data_0 = Vector3i(0, 1, 0)
 8:0/size_in_atlas = Vector2i(4, 5)
 8:0/0 = 0
+8:0/0/custom_data_0 = Vector3i(0, 0, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1koi3"]
 texture = ExtResource("1_5sr5w")
@@ -238,7 +241,9 @@ texture_region_size = Vector2i(8, 8)
 [resource]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
-custom_data_layer_0/name = "Selected"
-custom_data_layer_0/type = 6
+custom_data_layer_0/name = "Resource_production"
+custom_data_layer_0/type = 10
+custom_data_layer_1/name = "Cost"
+custom_data_layer_1/type = 0
 sources/3 = SubResource("TileSetAtlasSource_1koi3")
 sources/0 = SubResource("TileSetAtlasSource_oarwa")
