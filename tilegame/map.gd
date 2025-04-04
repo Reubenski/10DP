@@ -28,11 +28,12 @@ func get_select_coords(itemlist):
 	
 	
 	
-func _resource_change(resource: String ,amount:int):
+func resource_change(resource: String ,amount:int):
 
 	tile= $CityMap.get_cell_tile_data(mouse_position)
 	if tile:
-		print(tile.get_custom_data(resource))
+		print(tile.get_custom_data('Cost')
+)
 	else:
 		
 		print(tileindex)
@@ -52,7 +53,7 @@ func _input(event):
 				if !itemlist.get_selected_items().is_empty():
 					tileindex= get_select_coords(itemlist)
 					$CityMap.set_cell(mouse_position,0,tileindex)
-					#resource_change('people',1)
+					resource_change('cost',1)
 				else:
 					print('nothing selected')
 

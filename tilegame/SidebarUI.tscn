@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjpxvyhmgprxq"]
+[gd_scene load_steps=5 format=3 uid="uid://bjpxvyhmgprxq"]
 
 [ext_resource type="Texture2D" uid="uid://thhheotrr7r1" path="res://art/menusprite1.png" id="1_nhqug"]
 [ext_resource type="Texture2D" uid="uid://cdsjgwkrr5kqw" path="res://art/menusprite2.png" id="2_uclg4"]
 [ext_resource type="Texture2D" uid="uid://ceq6emnm1x487" path="res://art/menusprite3.png" id="3_ip0j4"]
+[ext_resource type="Script" uid="uid://bp1xuticsvg46" path="res://score_label.gd" id="4_nhqug"]
 
 [node name="SidebarUi" type="Control"]
 layout_mode = 3
@@ -32,3 +33,16 @@ item_1/text = "Bricks"
 item_1/icon = ExtResource("2_uclg4")
 item_2/text = "Metal"
 item_2/icon = ExtResource("3_ip0j4")
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.185
+anchor_top = 0.037
+anchor_right = 0.236
+anchor_bottom = 0.066
+offset_top = 0.4
+offset_right = -0.200012
+offset_bottom = 0.200001
+text = "Score: 0"
+script = ExtResource("4_nhqug")
