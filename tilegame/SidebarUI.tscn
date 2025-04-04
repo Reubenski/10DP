@@ -1,9 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjpxvyhmgprxq"]
+[gd_scene load_steps=7 format=3 uid="uid://bjpxvyhmgprxq"]
 
-[ext_resource type="Texture2D" uid="uid://thhheotrr7r1" path="res://art/menusprite1.png" id="1_nhqug"]
-[ext_resource type="Texture2D" uid="uid://cdsjgwkrr5kqw" path="res://art/menusprite2.png" id="2_uclg4"]
-[ext_resource type="Texture2D" uid="uid://ceq6emnm1x487" path="res://art/menusprite3.png" id="3_ip0j4"]
+[ext_resource type="Theme" uid="uid://d3w0k7viybfjl" path="res://art/fonttheme.tres" id="1_nhqug"]
+[ext_resource type="Texture2D" uid="uid://bh2uob74q6d0" path="res://art/sidebartexture.tres" id="1_rvxjy"]
+[ext_resource type="Texture2D" uid="uid://cp8m4webgcgei" path="res://art/newbuildingsprite_flipped.png" id="2_nhqug"]
 [ext_resource type="Script" uid="uid://bp1xuticsvg46" path="res://score_label.gd" id="4_nhqug"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uclg4"]
+atlas = ExtResource("2_nhqug")
+region = Rect2(64, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ip0j4"]
+atlas = ExtResource("2_nhqug")
+region = Rect2(128, 0, 64, 80)
 
 [node name="SidebarUi" type="Control"]
 layout_mode = 3
@@ -13,6 +21,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
+theme = ExtResource("1_nhqug")
 
 [node name="ItemList" type="ItemList" parent="."]
 layout_mode = 1
@@ -26,13 +35,14 @@ offset_bottom = -5.0
 item_count = 3
 max_columns = 2
 same_column_width = true
-icon_scale = 2.0
+icon_mode = 0
+icon_scale = 1.415
 item_0/text = "People"
-item_0/icon = ExtResource("1_nhqug")
+item_0/icon = ExtResource("1_rvxjy")
 item_1/text = "Bricks"
-item_1/icon = ExtResource("2_uclg4")
+item_1/icon = SubResource("AtlasTexture_uclg4")
 item_2/text = "Metal"
-item_2/icon = ExtResource("3_ip0j4")
+item_2/icon = SubResource("AtlasTexture_ip0j4")
 
 [node name="ScoreLabel" type="Label" parent="."]
 layout_mode = 1

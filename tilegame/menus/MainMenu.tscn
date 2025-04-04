@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://8hm7iut7ysgn"]
+[gd_scene load_steps=6 format=3 uid="uid://8hm7iut7ysgn"]
 
 [ext_resource type="Script" uid="uid://fkp4t56ct3na" path="res://menus/main_menu.gd" id="1_ct8su"]
 [ext_resource type="FontFile" uid="uid://keac4bdi7wc8" path="res://art/Tiny5-Regular.ttf" id="3_218cn"]
 [ext_resource type="Texture2D" uid="uid://e78jiusblpax" path="res://art/backgroundMenu.png" id="3_rmsp1"]
+[ext_resource type="Theme" uid="uid://d3w0k7viybfjl" path="res://art/fonttheme.tres" id="4_218cn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tfsul"]
 font = ExtResource("3_218cn")
@@ -48,6 +49,7 @@ offset_left = 558.0
 offset_top = 508.0
 offset_right = 764.0
 offset_bottom = 556.0
+theme = ExtResource("4_218cn")
 text = "Start Game"
 metadata/_edit_use_anchors_ = true
 
@@ -57,6 +59,7 @@ offset_left = 337.0
 offset_top = 573.0
 offset_right = 449.0
 offset_bottom = 618.0
+theme = ExtResource("4_218cn")
 text = "Exit"
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

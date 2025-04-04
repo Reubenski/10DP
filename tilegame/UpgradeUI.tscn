@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://8ssjgflhc08m"]
+[gd_scene load_steps=3 format=3 uid="uid://c4gpk8by78xmw"]
 
 [ext_resource type="Script" uid="uid://21lv4v4gsmx5" path="res://upgrade_ui.gd" id="1_1c6tr"]
+[ext_resource type="Theme" uid="uid://d3w0k7viybfjl" path="res://art/fonttheme.tres" id="1_x60vi"]
 
 [node name="UpgradeUI" type="Control"]
 layout_mode = 3
@@ -11,6 +12,7 @@ offset_left = -1200.0
 offset_right = -1160.0
 offset_bottom = 40.0
 grow_horizontal = 0
+theme = ExtResource("1_x60vi")
 script = ExtResource("1_1c6tr")
 
 [node name="ItemList" type="ItemList" parent="."]

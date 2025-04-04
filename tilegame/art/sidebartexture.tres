@@ -1,0 +1,8 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://bh2uob74q6d0"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2268n"]
+load_path = "res://.godot/imported/newbuildingsprite_flipped.png-f4a4ff243d39d036068ec85a9f60e68c.ctex"
+
+[resource]
+atlas = SubResource("CompressedTexture2D_2268n")
+region = Rect2(0, 0, 64, 80)
