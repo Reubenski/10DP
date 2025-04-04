@@ -1,9 +1,9 @@
 extends Node2D
 
 
-@export var tiles_per_side = 10
+@export var tiles_per_side = 10.0
 
-var screen_size
+
 var bricks =  10
 var people =10
 var metal =10
@@ -14,6 +14,9 @@ var tileindex
 var tile
 
 func _ready():
+	var scalenum =(800.0/$CityMap.tile_set.tile_size.x)/tiles_per_side
+	$CityMap.scale = Vector2(scalenum,scalenum)
+
 	pass
 
 func get_select_coords(itemlist): 
@@ -47,10 +50,7 @@ func _input(event):
 			
 			if event.pressed:
 				if !itemlist.get_selected_items().is_empty():
-					print('mouse position')
-					print(mouse_position)
 					tileindex= get_select_coords(itemlist)
-					print(tileindex)
 					$CityMap.set_cell(mouse_position,0,tileindex)
 					#resource_change('people',1)
 				else:
