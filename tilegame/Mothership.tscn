@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://cqrxjnj4jtnmq"]
+
+[ext_resource type="Script" uid="uid://bib6bwhnbx7ki" path="res://mothership.gd" id="1_cp1c6"]
+[ext_resource type="Texture2D" uid="uid://v7yfbngwwugp" path="res://art/UFO1.png" id="1_pfpdk"]
+[ext_resource type="PackedScene" uid="uid://be3xgwy6ke1wf" path="res://bomb.tscn" id="2_jedw4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cp1c6"]
+atlas = ExtResource("1_pfpdk")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jedw4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cp1c6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_swk6a"]
+radius = 32.0
+
+[node name="Mothership" type="Area2D" groups=["aliens"]]
+script = ExtResource("1_cp1c6")
+bomb = ExtResource("2_jedw4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jedw4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_swk6a")
+
+[node name="BombDoors1" type="Marker2D" parent="."]
+position = Vector2(0, 32)

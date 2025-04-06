@@ -30,6 +30,4 @@ func _buildingplaced(resource_cost:Dictionary):
 	for item in resource_cost.keys():
 		resources[item]-= resource_cost[item]
 	update()
-    #needs resource type and num input as
-
-
+	#needs resource type and num input as

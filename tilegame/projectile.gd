@@ -9,7 +9,7 @@ signal hit_enemy
 @export var homing = false
 
 func _ready():
-	hit_enemy.connect(get_node('/root/Main/SidebarUi').get_child(1)._ship_destroyed.bind())
+	hit_enemy.connect(get_node('/root/Main/SidebarUi')._ship_destroyed.bind())
 
 
 func explode():
