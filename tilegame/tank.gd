@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var top_speed = 400
-@export var acceleration = 300
+@export var acceleration = 250
 @export var health = 1
 @export var missile_speed = 400
 @export var missile_size = 1
@@ -60,5 +60,15 @@ func _process(delta):
 		velocity.x -= acceleration * delta
 	elif velocity.x < 0:
 		velocity.x += acceleration * delta
+	
+	if velocity.x > top_speed:
+		velocity.x = top_speed
+	elif velocity.x < -top_speed:
+		velocity.x = -top_speed
+		
 	position += velocity * delta
 	position = position.clamp(screen_offset, screen_size)
+	if position.x == screen_size.x or position.x == screen_offset.x:
+		velocity.x = -velocity.x
+
+		

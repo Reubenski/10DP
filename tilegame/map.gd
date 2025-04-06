@@ -27,12 +27,10 @@ func get_select_coords(itemlist):
 	
 func passive_gathering():
 	var totalset:Dictionary  
-	print(totalset)
+
 	for atlasid in range(3):
 		totalset[sidebar.resources.keys()[atlasid]] = $CityMap.get_used_cells_by_id(0,Vector2i(atlasid*4,0)).size()
-		
-	print(totalset)
-	print($CityMap.get_used_cells_by_id(0,Vector2i(8,0)).size())
+
 	sidebar.earned(totalset)
 	
 func custom_data(thing: String):
