@@ -43,3 +43,5 @@ shape = SubResource("CircleShape2D_yfqcd")
 
 [node name="Barrel" type="Marker2D" parent="."]
 position = Vector2(0, -32)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

@@ -34,3 +34,5 @@ shape = SubResource("CircleShape2D_swk6a")
 
 [node name="BombDoors1" type="Marker2D" parent="."]
 position = Vector2(0, 32)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

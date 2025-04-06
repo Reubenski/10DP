@@ -28,8 +28,14 @@ func _ready():
 	position = spawn
 	$AnimatedSprite2D.play()
 	
+func fire_effect():
+	var fire_sound = load("res://art/2699.mp3")
+	$AudioStreamPlayer.stream = fire_sound
+	$AudioStreamPlayer.play()
+
 func _process(delta):
 	if Input.is_action_pressed("fire") and reload_counter <= 0:
+		fire_effect()
 		for n in range(projectile_count):
 			var p = projectile.instantiate()
 			owner.add_child(p)

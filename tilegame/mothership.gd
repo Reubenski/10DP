@@ -12,6 +12,11 @@ var screen_size
 var screen_offset
 var rng = RandomNumberGenerator.new()
 
+func fire_effect():
+	var fire_sound = load("res://art/Laser.wav")
+	$AudioStreamPlayer.stream = fire_sound
+	$AudioStreamPlayer.play()
+	
 func _ready():
 	#screen_size = get_viewport_rect().size
 	screen_size = Vector2(square_size +uioffset, square_size)
@@ -30,6 +35,7 @@ func _process(delta):
 	bomb_counter -= delta
 	
 func drop_bomb():
+	fire_effect()
 	var p = bomb.instantiate()
 	get_parent().add_child(p)
 	p.transform = $BombDoors1.global_transform
