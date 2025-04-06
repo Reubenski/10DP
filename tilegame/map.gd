@@ -4,9 +4,6 @@ extends Node2D
 @export var tiles_per_side = 10.0
 
 
-var bricks =  10
-var people =10
-var metal =10
 
 var mouse_position
 var tileindex
@@ -22,23 +19,21 @@ func _ready():
 func get_select_coords(itemlist): 
 	if tile != null:
 		print(itemlist.get_selected_items().get(0)*4)
+		#converts the singular selected item into atlas coords
 	
 	return Vector2i(itemlist.get_selected_items().get(0)*4,0)
 
 	
 	
 	
-func resource_change(resource: String):
-
-	tile= $CityMap.get_cell_tile_data(mouse_position)
-	if tile:
-		print(tile.get_custom_data('Cost'))
-
-
-	else:
+func custom_data(thing: String):
+		var customData = $CityMap.tile_set.get_source(0).get_tile_data(tileindex,0)
+		if customData:
+			print(customData.get_custom_data(thing))  ##ensure the data pipeline matches type
+			get_node('/root/Main/SidebarUi')._buildingplaced(customData.get_custom_data(thing))
 		
-		print(tileindex)
-		print('no tile at this index')
+
+
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -53,8 +48,8 @@ func _input(event):
 			if event.pressed:
 				if !itemlist.get_selected_items().is_empty():
 					tileindex= get_select_coords(itemlist)
+					custom_data('cost')
 					$CityMap.set_cell(mouse_position,0,tileindex)
-					resource_change('cost')
 				else:
 					print('nothing selected')
 
