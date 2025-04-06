@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bjpxvyhmgprxq"]
+[gd_scene load_steps=8 format=3 uid="uid://bjpxvyhmgprxq"]
 
 [ext_resource type="Theme" uid="uid://d3w0k7viybfjl" path="res://art/fonttheme.tres" id="1_nhqug"]
 [ext_resource type="Texture2D" uid="uid://bh2uob74q6d0" path="res://art/sidebartexture.tres" id="1_rvxjy"]
 [ext_resource type="Texture2D" uid="uid://cp8m4webgcgei" path="res://art/newbuildingsprite_flipped.png" id="2_nhqug"]
-[ext_resource type="Script" uid="uid://bp1xuticsvg46" path="res://score_label.gd" id="4_nhqug"]
-[ext_resource type="Script" uid="uid://b6nv7n2hsj7td" path="res://resource_list.gd" id="5_uclg4"]
+[ext_resource type="Script" uid="uid://bfc17l3vvyg7w" path="res://sidebar_ui.gd" id="2_uclg4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uclg4"]
 atlas = ExtResource("2_nhqug")
@@ -18,7 +17,6 @@ region = Rect2(128, 0, 64, 80)
 font_size = 26
 
 [node name="SidebarUi" type="Control"]
-z_index = 9
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,6 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
 theme = ExtResource("1_nhqug")
+script = ExtResource("2_uclg4")
 
 [node name="ItemList" type="ItemList" parent="."]
 layout_mode = 1
@@ -37,16 +36,18 @@ offset_left = 1.0
 offset_top = 3.0
 offset_right = 0.600006
 offset_bottom = -5.0
+theme_override_font_sizes/font_size = 18
+max_text_lines = 2
 item_count = 3
 max_columns = 2
 same_column_width = true
 icon_mode = 0
-icon_scale = 1.415
-item_0/text = "People"
+icon_scale = 1.21
+item_0/text = "Apartment"
 item_0/icon = ExtResource("1_rvxjy")
-item_1/text = "Bricks"
+item_1/text = "Stonecutter"
 item_1/icon = SubResource("AtlasTexture_uclg4")
-item_2/text = "Metal"
+item_2/text = "Forge"
 item_2/icon = SubResource("AtlasTexture_ip0j4")
 
 [node name="ScoreLabel" type="Label" parent="."]
@@ -61,7 +62,6 @@ offset_top = 0.799999
 offset_right = -0.200073
 offset_bottom = -0.200005
 text = "Score: 0"
-script = ExtResource("4_nhqug")
 
 [node name="ResourceList" type="Label" parent="."]
 layout_mode = 1
@@ -78,4 +78,3 @@ text = "People: 10
 Bricks: 10
 Metal: 10"
 label_settings = SubResource("LabelSettings_nhqug")
-script = ExtResource("5_uclg4")
