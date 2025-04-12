@@ -42,7 +42,7 @@ func custom_data(thing: String):
 			print('data not found')
 			return null
 		
-#for every 'passive' tile on screen (map), add respective num to resources(sidebar)
+
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -58,7 +58,9 @@ func _input(event):
 				if !itemlist.get_selected_items().is_empty():
 					tileindex= get_select_coords(itemlist)
 					if custom_data('cost'):
+						## modulate resoucelist text colour to red
 						$CityMap.set_cell(mouse_position,0,tileindex)
+						##wait then modulate resoucelist text colour back to white
 					else: print('you are too poor')
 				else:
 					print('nothing selected')

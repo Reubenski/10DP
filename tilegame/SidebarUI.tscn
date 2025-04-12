@@ -1,15 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://bjpxvyhmgprxq"]
+[gd_scene load_steps=9 format=3 uid="uid://bjpxvyhmgprxq"]
 
 [ext_resource type="Theme" uid="uid://d3w0k7viybfjl" path="res://art/fonttheme.tres" id="1_nhqug"]
 [ext_resource type="Texture2D" uid="uid://bh2uob74q6d0" path="res://art/sidebartexture.tres" id="1_rvxjy"]
 [ext_resource type="Texture2D" uid="uid://cp8m4webgcgei" path="res://art/newbuildingsprite_flipped.png" id="2_nhqug"]
 [ext_resource type="Script" uid="uid://bfc17l3vvyg7w" path="res://sidebar_ui.gd" id="2_uclg4"]
+[ext_resource type="Texture2D" uid="uid://cnjj3lmgc6sko" path="res://art/sidbarBackground.png" id="5_uclg4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uclg4"]
 atlas = ExtResource("2_nhqug")
 region = Rect2(64, 0, 64, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ip0j4"]
+resource_name = "Forge"
 atlas = ExtResource("2_nhqug")
 region = Rect2(128, 0, 64, 80)
 
@@ -28,26 +30,29 @@ theme = ExtResource("1_nhqug")
 script = ExtResource("2_uclg4")
 
 [node name="ItemList" type="ItemList" parent="."]
+z_index = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.167
-anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = 3.0
-offset_right = 0.600006
-offset_bottom = -5.0
-theme_override_font_sizes/font_size = 18
-max_text_lines = 2
+anchor_left = 0.013
+anchor_top = 0.071
+anchor_right = 0.158
+anchor_bottom = 0.925
+offset_left = -1.6
+offset_top = 0.199997
+offset_right = 0.399994
+offset_bottom = -6.10352e-05
+tooltip_text = "Building selector"
+tooltip_auto_translate_mode = 2
+mouse_default_cursor_shape = 2
+text_overrun_behavior = 1
 item_count = 3
 max_columns = 2
-same_column_width = true
-icon_mode = 0
-icon_scale = 1.21
+icon_scale = 1.035
 item_0/text = "Apartment"
 item_0/icon = ExtResource("1_rvxjy")
-item_1/text = "Stonecutter"
+item_1/text = "Kiln"
 item_1/icon = SubResource("AtlasTexture_uclg4")
-item_2/text = "Forge"
+item_2/text = "Forge "
 item_2/icon = SubResource("AtlasTexture_ip0j4")
 
 [node name="ScoreLabel" type="Label" parent="."]
@@ -78,3 +83,7 @@ text = "People: 10
 Bricks: 10
 Metal: 10"
 label_settings = SubResource("LabelSettings_nhqug")
+
+[node name="SidbarBackground" type="Sprite2D" parent="."]
+position = Vector2(100, 400)
+texture = ExtResource("5_uclg4")
