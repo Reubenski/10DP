@@ -75,10 +75,10 @@ var upgrades = [
 ]
 
 func _ready():
-	render_treenode(upgradePos)
+	render_treenode()
 	pass
 
-func render_treenode(position: int):
+func render_treenode():
 	$ItemList.clear()
 	if upgradePos == -1:
 		$ItemList.add_item("FULLY UPGRADED!")
@@ -98,7 +98,7 @@ func _on_item_list_item_selected(index: int) -> void:
 
 	
 	upgradePos = selectedUpgrade["links"]
-	render_treenode(upgradePos)
+	render_treenode()
 	match selectedUpgrade["name"]:
 		"Burst Fire":
 			playerTank.reload_pattern = [0.1,0.1,0.1,1]
