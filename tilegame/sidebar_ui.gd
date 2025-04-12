@@ -33,7 +33,8 @@ func earned(resource_earned:Dictionary):
 	update()
 
 
-func _buildingplaced(resources_used:Dictionary): 
+
+func _costcheck(resources_used:Dictionary): 
 	
 	for item in resources_used.keys():
 		if resources[item] <= 0:

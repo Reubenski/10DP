@@ -5,59 +5,71 @@ var upgrades = [
 	[
 		{
 			"name":"Burst Fire",
-			"links":1
+			"links":1,
+			"cost": 1
 		},
 		{
 			"name":"Tank Speed",
-			"links":3
+			"links":3,
+			"cost": 1
 		}
 	],
 	[
 		{
 			"name":"Multiple Projectiles",
-			"links":2
+			"links":2,
+			"cost": 1
 		},
 		{
 			"name":"Penetrating Missiles",
-			"links":2
+			"links":2,
+			"cost": 1
 		}
 	],
 	[
 		{
 			"name":"Fully Automatic",
-			"links":-1
+			"links":-1,
+			"cost": 1
 		},
 		{
 			"name":"More Projectiles",
-			"links":-1
+			"links":-1,
+			"cost": 1
 		},
 		{
 			"name":"Homing Missiles",
-			"links":-1
+			"links":-1,
+			"cost": 1
 		}
 	],
 	[
 		{
 			"name":"Tank Armour",
-			"links":4
+			"links":4,
+			"cost": 1
 		},
 		{
 			"name":"Missile Speed",
-			"links":4
+			"links":4,
+			"cost": 1
 		}
 	],
 	[
 		{
 			"name":"Multiple Projectiles",
-			"links":-1
+			"links":-1,
+			"cost": 1
 		},
 		{
 			"name":"Fast Reload",
-			"links":-1
+			"links":-1,
+			"cost": 1
 		},
 		{
 			"name":"Missile Size",
-			"links":-1
+			"links":-1,
+			"cost": 1
 		}
 	]
 ]
@@ -72,12 +84,18 @@ func render_treenode(position: int):
 		$ItemList.add_item("FULLY UPGRADED!")
 		return
 	for n in range(len(upgrades[upgradePos])):
-		$ItemList.add_item(upgrades[upgradePos][n]["name"])
+		$ItemList.add_item(upgrades[upgradePos][n]["name"]+" cost: "+str(upgrades[upgradePos][n]["cost"]))
 
 func _on_item_list_item_selected(index: int) -> void:
 	if upgradePos == -1:
 		return
 	var selectedUpgrade = upgrades[upgradePos][index]
+
+	if !(get_node('../SidebarUi')._costcheck({'metal':selectedUpgrade["cost"]})):
+		print('Too poor for upgrade')
+		return
+
+	
 	upgradePos = selectedUpgrade["links"]
 	render_treenode(upgradePos)
 	match selectedUpgrade["name"]:

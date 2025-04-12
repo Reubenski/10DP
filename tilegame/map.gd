@@ -37,7 +37,7 @@ func custom_data(thing: String):
 		var customData = $CityMap.tile_set.get_source(0).get_tile_data(tileindex,0)
 		if customData:
 			print(customData.get_custom_data(thing))  ##ensure the data pipeline matches type
-			return sidebar._buildingplaced(customData.get_custom_data(thing))
+			return sidebar._costcheck(customData.get_custom_data(thing))
 		else: 
 			print('data not found')
 			return null
