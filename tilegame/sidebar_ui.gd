@@ -1,7 +1,7 @@
 extends Control
 
 
-@export var default_res = 10
+@export var default_res = 2
 @export var resources ={'people':default_res ,'bricks':default_res ,'metal':default_res }
  
 var buildingDetails ={}
@@ -37,7 +37,7 @@ func earned(resource_earned:Dictionary):
 func _costcheck(resources_used:Dictionary): 
 	
 	for item in resources_used.keys():
-		if resources[item] <= 0:
+		if resources[item] - resources_used[item] <=0:
 			return null
 		resources[item]-=  resources_used[item]
 	update()

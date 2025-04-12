@@ -14,8 +14,8 @@ texture = ExtResource("1_1koi3")
 0:0/0/custom_data_1 = "passive"
 0:0/0/custom_data_2 = {
 "bricks": 1,
-"metal": 1,
-"people": 1
+"metal": 0,
+"people": 0
 }
 0:0/0/custom_data_3 = 2
 0:0/0/custom_data_4 = 1
@@ -26,8 +26,8 @@ texture = ExtResource("1_1koi3")
 4:0/0/custom_data_0 = "Stonecutter"
 4:0/0/custom_data_1 = "passive"
 4:0/0/custom_data_2 = {
-"bricks": 1,
-"metal": 1,
+"bricks": 0,
+"metal": 0,
 "people": 1
 }
 4:0/0/custom_data_3 = 2
@@ -40,7 +40,7 @@ texture = ExtResource("1_1koi3")
 8:0/0/custom_data_1 = "passive"
 8:0/0/custom_data_2 = {
 "bricks": 1,
-"metal": 1,
+"metal": 0,
 "people": 1
 }
 8:0/0/custom_data_3 = 2
