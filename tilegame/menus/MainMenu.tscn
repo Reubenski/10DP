@@ -47,7 +47,6 @@ offset_right = 764.0
 offset_bottom = 556.0
 theme = ExtResource("4_218cn")
 text = "Start Game"
-metadata/_edit_use_anchors_ = true
 
 [node name="ExitButton" type="Button" parent="."]
 layout_mode = 0

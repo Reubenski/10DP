@@ -19,8 +19,8 @@ func _ready():
 
 
 func _ship_destroyed():
-	score +=10
-	$ScoreLabel.text = 'Score: %s' % score
+	Global.score += 10
+	$ScoreLabel.text = 'Score: %s' % Global.score
 	###Add score multiplier dependent on wave number
 
 
