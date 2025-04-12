@@ -5,6 +5,10 @@ extends Node
 var waveNo = 0
 var wave = [];
 var waveTimer = 0
+
+func _ready():
+	Global.score = 0
+
 func _process(delta):
 	if get_tree().get_nodes_in_group("aliens").size() == 0 and wave.size() == 0:
 		#modulate resourcelistui to green
