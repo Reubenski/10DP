@@ -5,6 +5,7 @@ signal hit_enemy
 @export var speed = 400
 @export var xspeed = 0
 @export var explosion : PackedScene
+@export var damaged_saucer : PackedScene
 @export var penetrating = false
 @export var homing = false
 
@@ -13,9 +14,13 @@ func _ready():
 
 
 func explode():
+	var d = damaged_saucer.instantiate()
 	var p = explosion.instantiate()
 	get_parent().add_child(p)
+	get_parent().add_child(d)
+	d.transform = $ExplosionPoint.global_transform
 	p.transform = $ExplosionPoint.global_transform
+	d.rotation =randf_range(-1.0,1.0)
 	
 func _process(delta):
 	position.y -= speed * delta
@@ -36,5 +41,8 @@ func _on_area_entered(area: Area2D) -> void:
 		explode()
 		area.queue_free()
 		hit_enemy.emit()
+		get_node("/root/Main/viewport").add_trauma(0.2)#screen shake
+
+		#create 'damaged ufo' sprite that bounces on floor
 		if !penetrating:
 			queue_free()

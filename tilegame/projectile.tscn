@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dfk3ky41arjko"]
+[gd_scene load_steps=10 format=3 uid="uid://dfk3ky41arjko"]
 
 [ext_resource type="Script" uid="uid://dpw6i8bas5oaw" path="res://projectile.gd" id="1_qxf0c"]
 [ext_resource type="Texture2D" uid="uid://cml212piijbfn" path="res://art/projectile.png" id="2_dgwo2"]
 [ext_resource type="PackedScene" uid="uid://vuu2f416kxce" path="res://Explosion.tscn" id="2_sxmqc"]
+[ext_resource type="PackedScene" uid="uid://b66okp1ybi5pv" path="res://saucer_damaged.tscn" id="3_2xblw"]
 [ext_resource type="Texture2D" uid="uid://2oqeqvsrrktd" path="res://art/explosion.png" id="3_dgwo2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sxmqc"]
@@ -38,6 +39,7 @@ gravity = Vector3(0, 98, 0)
 [node name="Projectile" type="Area2D"]
 script = ExtResource("1_qxf0c")
 explosion = ExtResource("2_sxmqc")
+damaged_saucer = ExtResource("3_2xblw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1

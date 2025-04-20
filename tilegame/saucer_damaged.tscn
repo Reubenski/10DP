@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://b66okp1ybi5pv"]
+
+[ext_resource type="Texture2D" uid="uid://bdkyjtjsx7qmv" path="res://art/saucer_damaged-sheet.png" id="1_dh8k4"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dh8k4"]
+friction = 0.7
+bounce = 0.11
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8deqp"]
+atlas = ExtResource("1_dh8k4")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0hbm"]
+atlas = ExtResource("1_dh8k4")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g6fwb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8deqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0hbm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_dh8k4")
+gravity_scale = 1.5
+center_of_mass_mode = 1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-1.5, 3)
+scale = Vector2(2.15, 0.7)
+build_mode = 1
+polygon = PackedVector2Array(-9.53488, 10, -13.7209, 0, -10.9302, -7.14286, -3.02326, -24.2857, 2.55814, -25.7143, 4.4186, -15.7143, 13.2558, -8.57143, 15.1163, -1.42857, 12.3256, 7.14286, 3.48837, 12.8571)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_g6fwb")

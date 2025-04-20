@@ -32,3 +32,8 @@ func _process(delta):
 			waveTimer = 0
 			wave.remove_at(0)
 	waveTimer += delta
+
+func shake()->void:
+	#random array to shake
+	$map.global_position+=Vector2i()
+	pass#move screen around
