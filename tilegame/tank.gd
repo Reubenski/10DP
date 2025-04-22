@@ -46,10 +46,11 @@ func _process(delta):
 			p.speed = missile_speed
 			p.scale.x = missile_size
 			p.scale.y = missile_size
-		reload_counter = reload_pattern[reload_position]
-		reload_position = reload_position + 1
 		if reload_position >= reload_pattern.size():
 			reload_position = 0
+		reload_counter = reload_pattern[reload_position]
+		reload_position = reload_position + 1
+
 	if reload_counter > 0:
 		reload_counter -= delta
 	if Input.is_action_pressed("right"):

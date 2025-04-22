@@ -4,7 +4,7 @@ func _ready():
 	var fire_sound = load("res://art/explosion.mp3")
 	$AudioStreamPlayer.stream = fire_sound
 	$AudioStreamPlayer.play()
-	$Label.text = 'GAME OVER - Score: %s' % Global.score
+	$Label.text = 'Game Over\nScore: %s' % Global.score
 
 func _on_exit_button_pressed() -> void:
 	get_tree().quit()

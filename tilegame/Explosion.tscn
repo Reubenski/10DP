@@ -13,6 +13,7 @@ initial_velocity_max = 132.18
 gravity = Vector3(0, 98, 0)
 
 [node name="Explosion" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_li25b")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]

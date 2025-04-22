@@ -8,40 +8,51 @@
 [ext_resource type="PackedScene" uid="uid://bjpxvyhmgprxq" path="res://SidebarUI.tscn" id="5_fos0i"]
 [ext_resource type="PackedScene" uid="uid://c4gpk8by78xmw" path="res://UpgradeUI.tscn" id="7_lgr22"]
 [ext_resource type="PackedScene" uid="uid://dadsxltdytdtj" path="res://Camera.tscn" id="8_trn2v"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_trn2v"]
-size = Vector2(1197.5, 20)
+[ext_resource type="Texture2D" uid="uid://dnbbtqis1p6ik" path="res://menus/control_help.png" id="9_03owx"]
 
 [node name="Main" type="Node"]
+process_mode = 1
+process_physics_priority = 1
 script = ExtResource("1_cm0pq")
 saucer = ExtResource("2_uu6xs")
 mothership = ExtResource("3_trn2v")
 
 [node name="map" parent="." instance=ExtResource("3_r0du0")]
+process_mode = 3
+process_physics_priority = 1
 position = Vector2(200, 0)
 
 [node name="Tank" parent="." instance=ExtResource("1_glv2v")]
+process_mode = 3
 texture_filter = 1
 
 [node name="SpawnPoint" type="Marker2D" parent="."]
 position = Vector2(316, -37)
 
 [node name="SidebarUi" parent="." instance=ExtResource("5_fos0i")]
+process_mode = 3
 focus_neighbor_left = NodePath(".")
 
 [node name="UpgradeUI" parent="." node_paths=PackedStringArray("playerTank") instance=ExtResource("7_lgr22")]
+process_mode = 3
+z_index = 4
 playerTank = NodePath("../Tank")
 
 [node name="MothershipSpawn" type="Marker2D" parent="."]
 position = Vector2(-32, 0)
 
 [node name="viewport" parent="." instance=ExtResource("8_trn2v")]
+process_mode = 3
 position = Vector2(600, 400)
 decay = 0.5
 max_offset = Vector2(20, 15)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="ControlHelp" type="Sprite2D" parent="."]
+process_mode = 3
+modulate = Color(1, 1, 1, 0.815686)
+z_index = 5
+position = Vector2(1105, 620)
+scale = Vector2(2, 2)
+texture = ExtResource("9_03owx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(600.25, 786)
-shape = SubResource("RectangleShape2D_trn2v")
+[connection signal="next_wave" from="." to="SidebarUi" method="_on_main_next_wave"]

@@ -38,7 +38,7 @@ func _process(delta):
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("aliens"):
-		explode()
+		call_deferred('explode')
 		area.queue_free()
 		hit_enemy.emit()
 		get_node("/root/Main/viewport").add_trauma(0.2)#screen shake

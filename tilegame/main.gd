@@ -1,10 +1,13 @@
 extends Node
+signal next_wave
 
 @export var saucer : PackedScene
 @export var mothership : PackedScene
 var waveNo = 0
 var wave = [];
 var waveTimer = 0
+var pause = false
+
 
 func _ready():
 	Global.score = 0
@@ -12,8 +15,12 @@ func _ready():
 func _process(delta):
 	if get_tree().get_nodes_in_group("aliens").size() == 0 and wave.size() == 0:
 		#modulate resourcelistui to green
-		$map.passive_gathering()
+		if waveNo>0:
+			$map.passive_gathering()
 		waveNo = waveNo + 1;
+		next_wave.emit(waveNo)
+		#find a 
+		#await get_tree().create_timer(3).timeout  this CAUSES MANY ISSUES
 		wave = []
 		for i in range(0,waveNo):
 			wave.append(0.3)
@@ -34,6 +41,9 @@ func _process(delta):
 	waveTimer += delta
 
 func shake()->void:
-	#random array to shake
+	#CAMERA 2D NODE
+	#small array of random vectors for adding to position
+	# array must contain vectors bewtween -10 and +10
+	#add original position to both beginneing and end of array
 	$map.global_position+=Vector2i()
 	pass#move screen around

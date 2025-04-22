@@ -44,6 +44,7 @@ animations = [{
 radius = 8.0
 
 [node name="Bomb" type="Area2D"]
+process_mode = 3
 texture_filter = 1
 collision_mask = 5
 script = ExtResource("1_4fn8o")

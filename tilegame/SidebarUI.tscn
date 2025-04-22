@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bjpxvyhmgprxq"]
+[gd_scene load_steps=13 format=3 uid="uid://bjpxvyhmgprxq"]
 
 [ext_resource type="Theme" uid="uid://d3w0k7viybfjl" path="res://art/fonttheme.tres" id="1_nhqug"]
 [ext_resource type="Texture2D" uid="uid://bh2uob74q6d0" path="res://art/sidebartexture.tres" id="1_rvxjy"]
 [ext_resource type="Texture2D" uid="uid://cp8m4webgcgei" path="res://art/newbuildingsprite_flipped.png" id="2_nhqug"]
 [ext_resource type="Script" uid="uid://bfc17l3vvyg7w" path="res://sidebar_ui.gd" id="2_uclg4"]
 [ext_resource type="Texture2D" uid="uid://cnjj3lmgc6sko" path="res://art/sidbarBackground.png" id="5_uclg4"]
+[ext_resource type="LabelSettings" uid="uid://ddj2dm2qaejsq" path="res://statustext.tres" id="6_ip0j4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uclg4"]
 atlas = ExtResource("2_nhqug")
@@ -15,8 +16,29 @@ resource_name = "Forge"
 atlas = ExtResource("2_nhqug")
 region = Rect2(128, 0, 64, 80)
 
-[sub_resource type="LabelSettings" id="LabelSettings_nhqug"]
-font_size = 26
+[sub_resource type="LabelSettings" id="LabelSettings_ie7h6"]
+font_size = 30
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 4
+shadow_color = Color(0.188261, 0.0319242, 0.137362, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_46vpp"]
+font_size = 30
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 4
+shadow_color = Color(0.242219, 0.0409963, 0.0649101, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ip0j4"]
+font_size = 35
+shadow_size = 2
+shadow_color = Color(0.211765, 0.0862745, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ggntn"]
+font_size = 30
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 4
+shadow_color = Color(0.188261, 0.0319242, 0.137362, 1)
+shadow_offset = Vector2(2, 2)
 
 [node name="SidebarUi" type="Control"]
 layout_mode = 3
@@ -58,32 +80,76 @@ item_2/icon = SubResource("AtlasTexture_ip0j4")
 [node name="ScoreLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.687
-anchor_top = 0.054
-anchor_right = 0.766
-anchor_bottom = 0.1
-offset_left = 0.599976
-offset_top = 0.799999
-offset_right = -0.200073
+anchor_left = 0.692
+anchor_top = 0.039
+anchor_right = 0.804
+anchor_bottom = 0.082
+offset_left = -0.400024
+offset_top = -0.200001
+offset_right = -1.80005
+offset_bottom = 0.400002
 theme_override_font_sizes/font_size = 27
 text = "Score: 0"
+label_settings = SubResource("LabelSettings_ie7h6")
 
 [node name="ResourceList" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.195
+anchor_left = 0.191
 anchor_top = 0.034
-anchor_right = 0.364
-anchor_bottom = 0.177
-offset_left = -1.52588e-05
-offset_top = -0.200001
-offset_right = 0.199982
-offset_bottom = 0.399994
+anchor_right = 0.317
+anchor_bottom = 0.171
+offset_left = -0.200012
+offset_top = -5.2
+offset_right = 47.6
+offset_bottom = 0.199997
 text = "People: 10
 Bricks: 10
 Metal: 10"
-label_settings = SubResource("LabelSettings_nhqug")
+label_settings = SubResource("LabelSettings_46vpp")
 
 [node name="SidbarBackground" type="Sprite2D" parent="."]
 position = Vector2(100, 400)
 texture = ExtResource("5_uclg4")
+
+[node name="UiLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.166
+anchor_bottom = 0.05
+offset_top = -1.0
+offset_right = 0.799988
+offset_bottom = -1.0
+theme_override_font_sizes/font_size = 35
+text = "Buildings"
+label_settings = SubResource("LabelSettings_ip0j4")
+horizontal_alignment = 1
+
+[node name="StatusText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.402
+anchor_top = 0.044
+anchor_right = 0.583
+anchor_bottom = 0.124
+offset_left = -0.400024
+offset_top = -0.200005
+offset_right = 8.40002
+offset_bottom = -0.200005
+theme_override_font_sizes/font_size = 40
+text = "Wave "
+label_settings = ExtResource("6_ip0j4")
+horizontal_alignment = 1
+
+[node name="Counter" type="Label" parent="StatusText"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.234
+anchor_right = 1.0
+anchor_bottom = 1.984
+offset_top = 0.0239944
+offset_right = -2.0
+offset_bottom = 0.0239944
+theme_override_font_sizes/font_size = 30
+label_settings = SubResource("LabelSettings_ggntn")
+horizontal_alignment = 1

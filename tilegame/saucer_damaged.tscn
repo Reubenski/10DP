@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b66okp1ybi5pv"]
+[gd_scene load_steps=7 format=3 uid="uid://b66okp1ybi5pv"]
 
+[ext_resource type="Script" uid="uid://d1hbf2garouku" path="res://saucer_damaged.gd" id="1_2otj5"]
 [ext_resource type="Texture2D" uid="uid://bdkyjtjsx7qmv" path="res://art/saucer_damaged-sheet.png" id="1_dh8k4"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dh8k4"]
 friction = 0.7
-bounce = 0.11
+bounce = 0.2
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8deqp"]
 atlas = ExtResource("1_dh8k4")
@@ -30,8 +31,10 @@ animations = [{
 
 [node name="Node2D" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_dh8k4")
-gravity_scale = 1.5
+gravity_scale = 1.25
 center_of_mass_mode = 1
+angular_velocity = 0.00349066
+script = ExtResource("1_2otj5")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-1.5, 3)
