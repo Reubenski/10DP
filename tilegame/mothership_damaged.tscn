@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://bxuqvf2uhisc6"]
+
+[ext_resource type="Script" uid="uid://fn8ttvte8831" path="res://mothership_damaged.gd" id="1_2bkhm"]
+[ext_resource type="Texture2D" uid="uid://dplp2v0ra53cl" path="res://art/UFO1_damaged.png" id="1_h1d7c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2bkhm"]
+atlas = ExtResource("1_h1d7c")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mv2w4"]
+atlas = ExtResource("1_h1d7c")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6v76r"]
+atlas = ExtResource("1_h1d7c")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2nj54"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2bkhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mv2w4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6v76r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="RigidBody2D"]
+script = ExtResource("1_2bkhm")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-32, 11, -9, 17, 9, 17, 31, 10, 30, -7, 0, -19, -30, -5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2nj54")

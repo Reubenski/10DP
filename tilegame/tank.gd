@@ -27,6 +27,7 @@ func _ready():
 	spawn.y = screen_size.y-32
 	position = spawn
 	$AnimatedSprite2D.play()
+	$shadow.play()
 	
 func fire_effect():
 	var fire_sound = load("res://art/2699.mp3")

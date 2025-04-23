@@ -103,9 +103,9 @@ offset_left = -0.200012
 offset_top = -5.2
 offset_right = 47.6
 offset_bottom = 0.199997
-text = "People: 10
-Bricks: 10
-Metal: 10"
+text = "People: 
+Bricks: 
+Metal: "
 label_settings = SubResource("LabelSettings_46vpp")
 
 [node name="SidbarBackground" type="Sprite2D" parent="."]
@@ -144,12 +144,15 @@ horizontal_alignment = 1
 [node name="Counter" type="Label" parent="StatusText"]
 layout_mode = 1
 anchors_preset = -1
+anchor_left = -0.235
 anchor_top = 1.234
-anchor_right = 1.0
+anchor_right = 1.243
 anchor_bottom = 1.984
-offset_top = 0.0239944
-offset_right = -2.0
-offset_bottom = 0.0239944
+offset_left = -1.89
+offset_top = 0.0240097
+offset_right = 0.0820007
+offset_bottom = 0.0240021
 theme_override_font_sizes/font_size = 30
 label_settings = SubResource("LabelSettings_ggntn")
 horizontal_alignment = 1
+autowrap_mode = 2

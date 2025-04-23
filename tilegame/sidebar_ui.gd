@@ -1,18 +1,19 @@
 extends Control
 
 
-@export var default_res = 2
+@export var default_res = 10
 @export var resources ={'people':default_res ,'bricks':default_res ,'metal':default_res }
- 
+@export var countdowntime = 5
 var buildingDetails ={}
 var score = 0
 var selected
 var wavenum
 
+
 func _ready():
-	print($ItemList.get_item_tooltip(0))
 	$ItemList.set_item_tooltip(0,'Provides housing for people, costs 1 Brick and 1 People resource.')
 	#### Use make_custom_tooltip to use a scene for tooltip
+	update()
 	$ResourceList.modulate=Color.WHITE
 
 		
@@ -58,12 +59,12 @@ func _on_main_next_wave(wavenum):
 	get_tree().paused = true
 	PhysicsServer2D.set_active(true)
 	$StatusText.text ='Wave : '+str(wavenum-1)
-	$StatusText/Counter.text = str('Next wave in..')
+	$StatusText/Counter.text = str('Get Ready for the next wave in..')
 	$StatusText.self_modulate= Color.LIGHT_GOLDENROD
 	$StatusText/Counter.self_modulate=Color.WHITE
 
 	await get_tree().create_timer(0.5).timeout
-	for count in range(3,-1,-1):
+	for count in range(countdowntime,-1,-1):
 		await get_tree().create_timer(1).timeout
 		$StatusText/Counter.text = str(count)
 	var tween = create_tween()
