@@ -34,4 +34,3 @@ func _on_area_entered(area: Area2D) -> void:
 		area.health = area.health - 1
 		if area.health <= 0:
 			get_tree().change_scene_to_file("res://menus/GameoverMenu.tscn")
-

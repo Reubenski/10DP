@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bib6bwhnbx7ki" path="res://mothership.gd" id="1_cp1c6"]
 [ext_resource type="PackedScene" uid="uid://be3xgwy6ke1wf" path="res://bomb.tscn" id="2_jedw4"]
-[ext_resource type="Texture2D" uid="uid://cfy1wro2vuk18" path="res://art/UFO1-sheet.png" id="3_jedw4"]
+[ext_resource type="Texture2D" uid="uid://v7yfbngwwugp" path="res://art/UFO1.png" id="3_jedw4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_swk6a"]
 atlas = ExtResource("3_jedw4")
@@ -27,9 +27,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5b48a")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ats2d")
 }],
 "loop": true,
 "name": &"default",
