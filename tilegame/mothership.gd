@@ -26,6 +26,8 @@ func _ready():
 	position.x = screen_size.x
 	
 func _process(delta):
+	if Global.paused:
+		return
 	position.y = ycenter + sin(position.x/100)*wave_height
 	position.x = position.x + speed*delta
 	if (speed > 0 and position.x > screen_size.x) || (speed < 0 and position.x < uioffset):

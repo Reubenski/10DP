@@ -156,3 +156,18 @@ theme_override_font_sizes/font_size = 30
 label_settings = SubResource("LabelSettings_ggntn")
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="PauseIndicator" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.402
+anchor_top = 0.044
+anchor_right = 0.583
+anchor_bottom = 0.124
+offset_left = -0.400024
+offset_top = 216.8
+offset_right = 8.40002
+offset_bottom = 216.8
+theme_override_font_sizes/font_size = 40
+label_settings = ExtResource("6_ip0j4")
+horizontal_alignment = 1

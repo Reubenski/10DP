@@ -26,6 +26,8 @@ func _ready():
 	$AnimatedSprite2D.play()
 	
 func _process(delta):
+	if Global.paused:
+		return
 	if position.y < target_y:
 		position.y += abs(speed) * delta
 		return

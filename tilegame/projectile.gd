@@ -20,6 +20,8 @@ func explode():
 	p.transform = $ExplosionPoint.global_transform
 	
 func _process(delta):
+	if Global.paused:
+		return
 	position.y -= speed * delta
 	if homing:
 		var aliens = get_tree().get_nodes_in_group("aliens")

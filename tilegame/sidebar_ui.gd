@@ -36,7 +36,14 @@ func earned(resource_earned:Dictionary):
 	tween.tween_property($ResourceList, "modulate", Color.WHITE, 1)
 	update()
 
-
+func _input(event: InputEvent) -> void:
+	if Input.is_action_pressed("pause"):
+		Global.paused = not Global.paused
+		if Global.paused:
+			$PauseIndicator.text ='PAUSED'
+		else:
+			$PauseIndicator.text =''
+			
 
 func _costcheck(resources_used:Dictionary): 
 	

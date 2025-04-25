@@ -35,6 +35,8 @@ func fire_effect():
 	$AudioStreamPlayer.play()
 
 func _process(delta):
+	if Global.paused:
+		return
 	if Input.is_action_pressed("fire") and reload_counter <= 0:
 		fire_effect()
 		for n in range(projectile_count):

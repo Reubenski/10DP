@@ -23,6 +23,8 @@ func gettingmap(pos):
 		queue_free()
 
 func _process(delta):
+	if Global.paused:
+		return
 	position.y += speed * delta
 	if position.y > screen_size.y:
 		queue_free()
