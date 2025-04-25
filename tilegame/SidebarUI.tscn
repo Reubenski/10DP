@@ -41,6 +41,7 @@ shadow_color = Color(0.188261, 0.0319242, 0.137362, 1)
 shadow_offset = Vector2(2, 2)
 
 [node name="SidebarUi" type="Control"]
+process_mode = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

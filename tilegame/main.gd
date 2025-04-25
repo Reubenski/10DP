@@ -22,6 +22,7 @@ func _process(delta):
 			$map.passive_gathering()
 		waveNo = waveNo + 1;
 		next_wave.emit(waveNo)
+		$SpawnPoint.position.x = randi_range(250,950)
 		#find a 
 		#await get_tree().create_timer(3).timeout  this CAUSES MANY ISSUES
 		wave = []
@@ -29,15 +30,16 @@ func _process(delta):
 			wave.append(0.3)
 		#wait then modulate resourcelistui to white
 	if wave.size() > 0 and waveTimer > wave[0]:
-		if waveNo % 3 == 0:
+		if waveNo % 3 == 0 and wave.size() % 3 ==0:
 			var p = mothership.instantiate()
 			add_child(p)
 			p.transform = $MothershipSpawn.transform
 			waveTimer = 0
-			wave = []
+			wave.remove_at(0)
 		else:
 			var p = saucer.instantiate()
 			add_child(p)
+			
 			p.transform = $SpawnPoint.transform
 			waveTimer = 0
 			wave.remove_at(0)
