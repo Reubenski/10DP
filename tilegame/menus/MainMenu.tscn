@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://8hm7iut7ysgn"]
+[gd_scene load_steps=7 format=3 uid="uid://8hm7iut7ysgn"]
 
 [ext_resource type="Script" uid="uid://fkp4t56ct3na" path="res://menus/main_menu.gd" id="1_ct8su"]
 [ext_resource type="FontFile" uid="uid://keac4bdi7wc8" path="res://art/Tiny5-Regular.ttf" id="3_218cn"]
 [ext_resource type="Texture2D" uid="uid://e78jiusblpax" path="res://art/backgroundMenu.png" id="3_rmsp1"]
 [ext_resource type="Theme" uid="uid://d3w0k7viybfjl" path="res://art/fonttheme.tres" id="4_218cn"]
+[ext_resource type="LabelSettings" uid="uid://b0gcxxihp1wev" path="res://new_label_settings.tres" id="5_vp83o"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tfsul"]
 font = ExtResource("3_218cn")
@@ -60,6 +61,26 @@ offset_right = 449.0
 offset_bottom = 618.0
 theme = ExtResource("4_218cn")
 text = "Exit"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 29.975
+anchor_bottom = 19.925
+offset_right = -0.00012207
+offset_bottom = -6.10352e-05
+color = Color(0, 0, 0, 1)
+
+[node name="introtext" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 371.0
+offset_top = 364.0
+offset_right = 791.0
+offset_bottom = 409.0
+text = "a videogame by 
+Ash & Reuben"
+label_settings = ExtResource("5_vp83o")
+horizontal_alignment = 1
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

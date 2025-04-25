@@ -1,7 +1,13 @@
-[gd_resource type="LabelSettings" format=3 uid="uid://b0gcxxihp1wev"]
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://b0gcxxihp1wev"]
+
+[ext_resource type="FontFile" uid="uid://keac4bdi7wc8" path="res://art/Tiny5-Regular.ttf" id="1_1nvk1"]
 
 [resource]
+font = ExtResource("1_1nvk1")
 font_size = 40
-outline_color = Color(0, 0, 0, 1)
+font_color = Color(0.521569, 0.14902, 0.184314, 1)
+outline_size = 1
+outline_color = Color(0.826795, 0.476667, 0.964052, 1)
 shadow_size = 4
-shadow_color = Color(0.188261, 0.0319242, 0.137362, 1)
+shadow_color = Color(0.713707, 0.572922, 0.197114, 1)
+shadow_offset = Vector2(0, 1)
