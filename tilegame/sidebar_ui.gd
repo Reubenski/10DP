@@ -73,6 +73,8 @@ func _on_main_next_wave(wavenum):
 	await get_tree().create_timer(0.5).timeout
 	for count in range(countdowntime,-1,-1):
 		await get_tree().create_timer(1).timeout
+		while Global.paused:
+			await get_tree().create_timer(0.1).timeout
 		$StatusText/Counter.text = str(count)
 	var tween = create_tween()
 	tween.tween_property($StatusText/Counter, "self_modulate", Color.TRANSPARENT, 1)
