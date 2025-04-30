@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://yf6uqrufbycl"]
+[gd_scene load_steps=11 format=3 uid="uid://yf6uqrufbycl"]
 
 [ext_resource type="Script" uid="uid://6joqbt052qst" path="res://main.gd" id="1_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://bujdsgmh6a7ku" path="res://tank.tscn" id="1_glv2v"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c4gpk8by78xmw" path="res://UpgradeUI.tscn" id="7_lgr22"]
 [ext_resource type="PackedScene" uid="uid://dadsxltdytdtj" path="res://Camera.tscn" id="8_trn2v"]
 [ext_resource type="Texture2D" uid="uid://dnbbtqis1p6ik" path="res://menus/control_help.png" id="9_03owx"]
+[ext_resource type="PackedScene" uid="uid://nqsn05biw725" path="res://touch_screencontrols.tscn" id="10_wkp8b"]
 
 [node name="Main" type="Node"]
 process_mode = 1
@@ -54,5 +55,8 @@ z_index = 5
 position = Vector2(1105, 620)
 scale = Vector2(2, 2)
 texture = ExtResource("9_03owx")
+
+[node name="TouchScreencontrols" parent="." instance=ExtResource("10_wkp8b")]
+visible = false
 
 [connection signal="next_wave" from="." to="SidebarUi" method="_on_main_next_wave"]

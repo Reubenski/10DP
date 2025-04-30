@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://nqsn05biw725"]
+
+[ext_resource type="Texture2D" uid="uid://doycfpepu1mr4" path="res://art/lineLight22.png" id="1_hairu"]
+[ext_resource type="Texture2D" uid="uid://c2pwe04qnefma" path="res://art/lineLight23.png" id="2_xr7cm"]
+[ext_resource type="Texture2D" uid="uid://bgwemj7uxav02" path="res://art/lineLight47.png" id="3_p0xon"]
+[ext_resource type="Texture2D" uid="uid://dmqkea4rbu0u2" path="res://art/lineLight12.png" id="4_l3wdg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sc1dx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kjvhd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5tuhn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2gh4u"]
+
+[node name="TouchScreencontrols" type="Node2D"]
+modulate = Color(1, 1, 1, 0.529412)
+z_index = 9
+
+[node name="leftTouchScreen" type="TouchScreenButton" parent="."]
+position = Vector2(161, 467)
+scale = Vector2(2.604, 2.5)
+texture_normal = ExtResource("1_hairu")
+shape = SubResource("CircleShape2D_sc1dx")
+action = "left"
+
+[node name="rightTouchScreen" type="TouchScreenButton" parent="."]
+position = Vector2(840, 464)
+scale = Vector2(2.5, 2.5)
+texture_normal = ExtResource("2_xr7cm")
+shape = SubResource("CircleShape2D_kjvhd")
+action = "right"
+
+[node name="fireTouchScreen" type="TouchScreenButton" parent="."]
+position = Vector2(499, 576)
+scale = Vector2(2.5, 2.5)
+texture_normal = ExtResource("3_p0xon")
+shape = SubResource("CircleShape2D_5tuhn")
+action = "fire"
+
+[node name="pauseTouchScreen" type="TouchScreenButton" parent="."]
+position = Vector2(38, 693)
+scale = Vector2(1.6875, 1.54167)
+texture_normal = ExtResource("4_l3wdg")
+shape = SubResource("RectangleShape2D_2gh4u")
+action = "pause"

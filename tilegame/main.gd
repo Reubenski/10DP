@@ -7,9 +7,12 @@ var waveNo = 0
 var wave = [];
 var waveTimer = 0
 var pause = false
-
-
+var mobile_list=["Android", "BlackBerry 10","iOS"]
 func _ready():
+	
+	if OS.get_name() in mobile_list:
+		$TouchScreencontrols.visible =true
+
 	Global.score = 0
 	Global.paused = false
 
