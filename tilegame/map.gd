@@ -62,6 +62,7 @@ func _input(event):
 						$CityMap.set_cell(mouse_position,0,tileindex)
 						##wait then modulate resoucelist text colour back to white
 					else: print('you are too poor')
+					itemlist.deselect_all()
 				else:
 					print('nothing selected')
 

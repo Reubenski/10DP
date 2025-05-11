@@ -12,6 +12,8 @@ extends Area2D
 @export var square_size = 800
 @export var penetrating_bullets = false
 @export var homing_missiles = false
+@export var immediate_speed = 60
+@export var speed_slowdown = 0.945
 var velocity = Vector2.ZERO
 var screen_size
 var screen_offset
@@ -45,8 +47,13 @@ func _process(delta):
 			p.transform = $Barrel.global_transform
 			p.xspeed = (-(projectile_count-1)/2 + n)*100 #magic number cause I'm a hack
 			p.penetrating = penetrating_bullets
-			p.homing = homing_missiles
-			p.speed = missile_speed
+
+			if homing_missiles:
+				p.speed=300
+				p.homing = homing_missiles
+				p.get_child(2).emitting=false
+			else:
+				p.speed = missile_speed
 			p.scale.x = missile_size
 			p.scale.y = missile_size
 		if reload_position >= reload_pattern.size():
@@ -56,14 +63,19 @@ func _process(delta):
 
 	if reload_counter > 0:
 		reload_counter -= delta
+
+
+
 	if Input.is_action_pressed("right"):
+		if Input.is_action_just_pressed("right"):
+			velocity.x += acceleration * delta + immediate_speed
 		velocity.x += acceleration * delta
-	elif velocity.x > 0:
+	elif Input.is_action_pressed("left"):
+		if Input.is_action_just_pressed("left"):
+			velocity.x -= acceleration * delta + immediate_speed
 		velocity.x -= acceleration * delta
-	if Input.is_action_pressed("left"):
-		velocity.x -= acceleration * delta
-	elif velocity.x < 0:
-		velocity.x += acceleration * delta
+	else: 
+		velocity.x = velocity.x*speed_slowdown
 	
 	if velocity.x > top_speed:
 		velocity.x = top_speed

@@ -57,6 +57,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("9_03owx")
 
 [node name="TouchScreencontrols" parent="." instance=ExtResource("10_wkp8b")]
+process_mode = 1
 visible = false
 
 [connection signal="next_wave" from="." to="SidebarUi" method="_on_main_next_wave"]

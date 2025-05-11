@@ -103,8 +103,10 @@ func _on_item_list_item_selected(index: int) -> void:
 		"Burst Fire":
 			playerTank.reload_pattern = [0.1,0.1,0.1,1]
 		"Tank Speed":
-			playerTank.top_speed = playerTank.top_speed + 300
-			playerTank.acceleration = playerTank.acceleration + 300
+			playerTank.top_speed = playerTank.top_speed*2
+			playerTank.acceleration = playerTank.acceleration *1.5
+			playerTank.immediate_speed = playerTank.immediate_speed*2
+			playerTank.speed_slowdown = playerTank.speed_slowdown**2
 		"Multiple Projectiles":
 			playerTank.projectile_count = 3
 		"Penetrating Missiles":
